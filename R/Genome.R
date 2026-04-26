@@ -36,3 +36,16 @@ setMethod(
     round(object@total_proteins / object@total_chromosomes)
   }
 )
+
+devtools::document()
+devtools::build()
+devtools::install()
+
+library(MyGenomePackage)
+
+g = new("Genome",
+        genome_name = "Ecoli",
+        num_chromosomes = 1,
+        num_proteins = 4300)
+
+avgProteinPerCh(g)
